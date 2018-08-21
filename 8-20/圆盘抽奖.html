@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    #circle{position: relative;transform-origin: 212px 212px;}
+    #needle{position: absolute;top: 106px;left: 154px;}
+
+    </style>
+</head>
+<body>
+    <div id="circle"><img src="images/index.png"></div>
+    <div id="needle"><img src="images/point.png"></div>
+    <script>
+    var oCircle=document.getElementById('circle');
+    var oNeedle=document.getElementById('needle');
+    var arr=['30免费流量包','20猫币','20免费流量包','10免费流量包','5猫币','谢谢参与','10猫币','一等奖','2猫币','100免费流量包'];
+
+    var r=0;
+    var t=0;
+    
+    
+
+    oNeedle.onclick=function(){
+        
+        r=parseInt(Math.random()*10)
+        t=r*36+720;
+        oCircle.style.transform="rotate("+t+"deg)";
+        oCircle.style.transition="3s";
+       
+        setTimeout(function(){
+            alert("你获得了: "+arr[r]);
+            location.reload();
+
+        },3000)
+
+
+    }
+
+    </script>
+</body>
+</html>

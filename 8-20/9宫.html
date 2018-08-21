@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style01.css">
+</head>
+<body>
+    <h1>随机</h1>
+<div id="food">
+    <div id="close"></div>
+    
+    <ul id="ul">
+        <li>
+            <dl>
+                <dt><img src="images/001.jpg"/></dt>
+                <dd>挪威森林1</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="images/002.jpg"/></dt>
+                <dd>挪威森林2</dd>
+                </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><img src="images/003.jpg"/></dt>
+                <dd>挪威森林3</dd>
+            </dl>
+        </li>
+        <li class="n4">
+            <dl>
+                <dt><img src="images/004.jpg"/></dt>
+                <dd>挪威森林4</dd>
+            </dl>
+        </li>
+        <li class="n5">
+            <dl>
+                <dt><img src="images/005.jpg"/></dt>
+                <dd>挪威森林5</dd>
+            </dl>
+        </li>
+        <li class="n6">
+            <dl>
+                <dt><img src="images/006.jpg"/></dt>
+                <dd>挪威森林6</dd>
+            </dl>
+        </li>
+        <li class="n7">
+            <dl>
+                <dt><img src="images/007.jpg"/></dt>
+                <dd>挪威森林7</dd>
+            </dl>
+        </li>
+        <li class="n8">
+            <dl>
+                <dt><img src="images/008.jpg"/></dt>
+                <dd>挪威森林8</dd>
+            </dl>
+        </li>
+        <li class="nine">
+            <dl>
+                <dt id="btn"><img src="images/009.jpg" id="pic"/></dt>
+                <dd>9</dd>
+            </dl>
+        </li>
+    </ul>
+    <div id="big"></div>
+</div>
+<script>
+    var oLi=document.getElementsByTagName("li");
+    var oBtn=document.getElementById("btn");
+    var oPic=document.getElementById("pic");
+    var mun=i=t=0;//计数器(顺时针)
+    var ofood=document.getElementById("food");
+    var oBig=document.getElementById("big");
+    var oUl=document.getElementById("ul");
+     
+    
+    oBtn.onclick=function(){
+        oPic.style.transform="scale(0.6)";
+        oPic.style.transition="1s";
+
+        view();//动画效果视图
+
+    }
+    function view(){
+        num = parseInt(Math.random()*10+20);//确定顺时计走过的li个数
+
+        console.log('固定'+num);
+
+        //确定循环次数
+        if(i<num){//i:已完成的循环次数
+              i++;//每次循环一个li标签加1
+              setTimeout(view,200);
+              console.log('动态'+i);
+
+        }else{
+            i=0;//下一次抽奖准备
+            oPic.style.transform="scale(0.8)";
+            oPic.style.transition="1s";
+            oBig.innerHTML=oLi[t].innerHTML;
+
+            function big(){
+                oBig.className="b";
+                oBig.className="c";
+                oUl.className="a";   
+            }
+            big();
+            function sml(){
+               
+                oUl.className="b"; 
+                oBig.className="a";  
+            }
+            setTimeout(sml,3000);          
+
+        }
+        //动画t是li下标
+        if(t<oLi.length -1){//先清除所有再设置下一个
+            for(var j = 0;j<oLi.length-1;j++){
+                oLi[j].style.border="2px solid #000";
+                oLi[j].style.background="#fff";
+
+            }
+            oLi[t].style.border="2px solid #f00";
+            oLi[t].style.background="rgba(255,0,0,.4)";
+            t++;
+
+        }else{
+            t=0;
+        }
+
+    }
+    
+</script>
+</body>
+</html>
