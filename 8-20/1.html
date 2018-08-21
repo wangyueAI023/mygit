@@ -13,64 +13,6 @@
 	</style>
 </head>
 <body>
-	<div>
-		<ul>
-			<li><img src=""><img src="images/001.jpg"></li>
-			<li><img src=""><img src="images/002.jpg"></li>
-			<li><img src=""><img src="images/003.jpg"></li>
-			<li><img src=""><img src="images/004.jpg"></li>
-			<li><img src="">开始</li>
-			<li><img src=""><img src="images/005.jpg"></li>
-			<li><img src=""><img src="images/006.jpg"></li>
-			<li><img src=""><img src="images/007.jpg"></li>
-			<li><img src=""><img src="images/008.jpg"></li>
-		</ul>
-	</div>
-	<script type="text/javascript">
-		var a=document.getElementsByTagName('li');
-		var n=[0,1,2,5,8,7,6,3]
-		var i=0;
-		var bool=true;
-		var max=3000;
-		var min=2000
-		
-       
-
-		a[4].onclick = function(){
-			
-		
-			time();
-
-			setTimeout(function(){
-
-			 		clearTimeout(begin);
-
-			 		
-
-			 },Math.random()*(max-min+1)+min);
-          console.log(a[4].disabled);
-			
-		}
-             	
-		function time(){
-
-            begin=setTimeout(time,80);
-			a[n[i]].style.border="";
-			i++;
-            if (i==8) i=0;
-            console.log(i);
-            a[n[i]].style.border="1px solid #f00";
-           
-          
-		}
-		
-
-
-
-					
-
-
-		
-	</script>
+	<p>夏目啊</p>
 </body>
 </html>
