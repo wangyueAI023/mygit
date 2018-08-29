@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	昵称:<input type="text" value="林品茹" id="uNmae" />
+	<script type="text/javascript">
+	    //获取id="uNmae"的元素
+		var oName=document.getElementById("uNmae");
+       //oName.value;//输出
+       //光标离开oName后将实现的功能
+       oName.onblur=function(){
+       	alert(oName.value);//获取元素的属性
+       }
+	</script>
+</body>
+</html>

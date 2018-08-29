@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" value="姓名" id="name" />
+	<select id="sel">
+		<option value="炸鸡" >炸鸡</option>
+		<option value="可乐" >可乐</option>
+		<option value="啤酒" >啤酒</option>
+		<option value="沙拉" >沙拉</option>
+	</select>
+	<button id="btn">确定</button>
+	<p style="font-size: 40px;" id="msg">显示菜单</p>
+
+	<script type="text/javascript">
+		var oName=document.getElementById("name");
+		var oSel=document.getElementById("sel");
+		var oBtn=document.getElementById("btn");
+		var oMsg=document.getElementById("msg");//读取双标签的内容
+	    var con=oMsg.innerHTML;//修改双标签的内容
+	    
+		oBtn.onclick=function(){
+             //document.write(oName.value+"要"+oSel.value);
+             oMsg.innerHTML=oName.value+"要"+oSel.value;
+		}
+
+	</script>
+</body>
+</html>
